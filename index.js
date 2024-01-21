@@ -1,28 +1,34 @@
 // variables for packages 
 const fs = require('fs');
 const inquirer = require('inquirer');
+// add require for generate markdown file
+//
 
 
 // question array to fill 
 const questions = [
     {
-        message: "Please enter a title for your README.",
+        message: "Please enter a name for your project.",
         name: "title"
     },
     {
         message: "Please enter a description for your README.",
+        // what does it do, how does it do it
         name: "desc"
     },
     {
         message: "Please enter any installation instructions.",
+        // system requirements
         name: "install",
     },
     {
         message: "Please enter any usage information.",
+        //
         name: "usage"
     },
     {
         message: "Please enter any contribution guidelines.",
+        //contributors (use their GitHub username)
         name: "contrib",
     },
     {
@@ -35,7 +41,8 @@ function init(questionArray) {
     inquirer.prompt(questionArray)
         .then((responses => {
             console.log(responses)
-            
+            //create the file in new folder?
+
         }));
 }
 init(questions);
