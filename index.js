@@ -31,18 +31,15 @@ const questions = [
     }
 ];
 
-function init = (questionArray) => {
-    return inquirer.prompt(questionArray);
+function init(questionArray) {
+    inquirer.prompt(questionArray)
+        .then((responses => {
+            console.log(responses)
+            
+        }));
 }
-//     .then((answers) => {
-//         console.log(answers);
-//     })
-//     .catch((error) => {
-//         console.error(error);
-//     })
-// };
 init(questions);
-console.log(process.argv[2]);
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
