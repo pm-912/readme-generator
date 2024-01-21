@@ -1,6 +1,9 @@
+// variables for packages 
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+
+// question array to fill 
 const questions = [
     {
         message: "Please enter a title for your README.",
@@ -28,7 +31,7 @@ const questions = [
     }
 ];
 
-const askUser = (questionArray) => {
+function init = (questionArray) => {
     return inquirer.prompt(questionArray);
 }
 //     .then((answers) => {
@@ -38,7 +41,7 @@ const askUser = (questionArray) => {
 //         console.error(error);
 //     })
 // };
-askUser(questions);
+init(questions);
 console.log(process.argv[2]);
 
 // TODO: Create a function to write README file
@@ -46,9 +49,3 @@ function writeToFile(fileName, data) {
     fs.writeFile(`${answers.name}.txt`, JSON.stringify(answers, null, 2), (err) =>
         err ? console.error(err) : console.log('Success!'))
 }
-
-// TODO: Create a function to initialize app
-// function init() { }
-
-// Function call to initialize app
-// init();
