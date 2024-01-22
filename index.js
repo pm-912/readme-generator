@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 // add require for generate markdown file
-//
+const markdwn = require('./utils/generateMarkdown')
 
 
 // question array to fill 
