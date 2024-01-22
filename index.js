@@ -44,17 +44,10 @@ function init(questionArray) {
             //create the file in new folder?
             // writeToFile here
         }));
+        //.catch((error) => {
+        //console.error(error)}
 }
-function init(questionArray) {
-    return inquirer.prompt(questionArray);
-}
-//     .then((answers) => {
-//         console.log(answers);
-//     })
-//     .catch((error) => {
-//         console.error(error);
-//     })
-// };
+
 init(questions);
 
 
