@@ -42,7 +42,7 @@ function init(questionArray) {
         .then((responses => {
             console.log(responses)
             //create the file in new folder?
-
+            // writeToFile here
         }));
 }
 init(questions);
