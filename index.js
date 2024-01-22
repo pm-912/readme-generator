@@ -8,34 +8,33 @@ const inquirer = require('inquirer');
 // question array to fill 
 const questions = [
     {
+        message: "Please enter your name.",
+        name: "user"
+    },
+    {
         message: "Please enter a name for your project.",
         name: "title"
     },
     {
-        message: "Please enter your name",
-        name: "user"
+        message: "Please enter a description for your application.",
+        // what does it do
+        name: "desc"
     },
     {
-        message: "Please enter a description for your README.",
-        // what does it do, how does it do it
-        name: "desc"
+        message: "Please enter any usage information.",
+        // how it does it
+        name: "usage"
     },
     {
         type: "list", // checkbox?
         message: "Please choose a license",
         name: "license",
-        choices: ""
-        // fill in 4-5 license choices
+        choices: ("MIT", "Apache-2.0", "GPL-3.0", "BSD-2-Clause")
     },
     {
-        message: "Please enter any installation instructions.",
+        message: "Please enter any installation instructions, including system and software requirements.",
         // system requirements
         name: "install",
-    },
-    {
-        message: "Please enter any usage information.",
-        //
-        name: "usage"
     },
     {
         message: "Please enter any contribution guidelines.",
