@@ -31,7 +31,7 @@ const questions = [
     }
 ];
 
-function init = (questionArray) => {
+function init(questionArray) {
     return inquirer.prompt(questionArray);
 }
 //     .then((answers) => {
