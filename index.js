@@ -1,11 +1,10 @@
-// variables for packages 
+// Variables for the required files this file references
 const fs = require('fs');
 const inquirer = require('inquirer');
-// add require for generate markdown file
-const markdwn = require('./utils/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown');
 
 
-// question array to fill 
+// Array of questions to ask when called upon
 const questions = [
     {
         message: "Please enter your name.",
@@ -17,56 +16,50 @@ const questions = [
     },
     {
         message: "Please enter a description for your application.",
-        // what does it do
-        name: "desc"
+        name: "description"
     },
     {
-        message: "Please enter any usage information.",
-        // how it does it
+        message: "How does one use the application?",
         name: "usage"
     },
     {
-        type: "list", // checkbox?
-        message: "Please choose a license",
-        name: "license",
-        choices: ("MIT", "Apache-2.0", "GPL-3.0", "BSD-2-Clause")
-    },
-    {
         message: "Please enter any installation instructions, including system and software requirements.",
-        // system requirements
         name: "install",
     },
     {
-        message: "Please enter any contribution guidelines.",
-        //contributors (use their GitHub username)
-        name: "contrib",
+        type: "list",
+        message: "Please choose a license, if applicable",
+        name: "license",
+        choices: ["MIT", "Apache_2.0", "GPLv3", "BSD_2--Clause", "None"]
     },
     {
         message: "Please enter any test instructions.",
         name: "test",
     },
     {
+        message: "Please enter any contribution guidelines.",
+        name: "contrib",
+    },
+    {
+        message: "Please enter your GitHub account name",
+        name: "github"
+    },
+    {
         message: "Please enter your email",
-        name: "contact",
+        name: "email",
     }
 ];
 
 function init(questionArray) {
     inquirer.prompt(questionArray)
-        .then((responses => {
+        .then((responses) => {
             console.log(responses)
-            //create the file in new folder?
-            // writeToFile here
-        }));
-        //.catch((error) => {
-        //console.error(error)}
-}
+            fs.writeFileSync("README.md", generateMarkdown(responses), (err) =>
+                err ? console.error(err) : console.log('Success!'))
+})
+        .catch ((error) => {
+    console.error(error)
+})
+};
 
 init(questions);
-
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(`${data.name}.md`, JSON.stringify(data, null, 2), (err) =>
-        err ? console.error(err) : console.log('Success!'))
-}
