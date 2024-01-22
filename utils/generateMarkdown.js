@@ -29,8 +29,14 @@ function generateMarkdown(data) {
   ## Contributing\
   ${data.cont}
   \
+  ## Licensing\
+  ${data.license}
+  \
   ## Testing Instructions\
   ${data.test}
+  \
+  ## Contact Info
+  ${data.contact}
 `;
 }
 

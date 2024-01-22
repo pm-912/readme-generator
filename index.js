@@ -12,9 +12,20 @@ const questions = [
         name: "title"
     },
     {
+        message: "Please enter your name",
+        name: "user"
+    },
+    {
         message: "Please enter a description for your README.",
         // what does it do, how does it do it
         name: "desc"
+    },
+    {
+        type: "list", // checkbox?
+        message: "Please choose a license",
+        name: "license",
+        choices: ""
+        // fill in 4-5 license choices
     },
     {
         message: "Please enter any installation instructions.",
@@ -34,6 +45,10 @@ const questions = [
     {
         message: "Please enter any test instructions.",
         name: "test",
+    },
+    {
+        message: "Please enter your email",
+        name: "contact",
     }
 ];
 
@@ -53,6 +68,6 @@ init(questions);
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(`${answers.name}.txt`, JSON.stringify(answers, null, 2), (err) =>
+    fs.writeFile(`${data.name}.md`, JSON.stringify(data, null, 2), (err) =>
         err ? console.error(err) : console.log('Success!'))
 }
