@@ -50,6 +50,8 @@ const questions = [
     }
 ];
 
+// This function uses inquirer to ask the questions in the array, then creates a README file using the
+// generateMarkdown function.
 function init(questionArray) {
     inquirer.prompt(questionArray)
         .then((responses) => {

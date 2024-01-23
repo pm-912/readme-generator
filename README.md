@@ -11,13 +11,13 @@
   7.[Contact Info](#contact)
 
 ## Description
-  This application takes user data and creates a high-quality README
+  This is a simple application that creates a README Template, and fills in the user supplied information
   
 ## Usage
-  The user runs the application in command line using Node. This prompts the user with a series of questions of things to include in the README. The application then renders the answers onto a markdown file.
+  The application runs through the command line, using JavaScript and node. The User is prompted with questions pertaining to different parts of the README template. Then, the application creates a file that stores the user's answers.
   
 ## Installation
-  The application uses JavaScript, Node.JS, and the Inquirer package
+  The application uses node.js, javascript, and inquirer
 
   ## Licensing
   This application is licensed by MIT.
@@ -25,17 +25,13 @@
   [MIT License](https://opensource.org/licenses/MIT)
   
 ## Testing
-  Test the application yourself, it is fairly simple.
+  Easy to test, try it yourself
 
 ## Contributing
-  If you would like to contribute, reach me below.
-  
-## Sources
-  Youtube videos, tutor sessions, office hours. 
+  Reach me if you'd like to contribute.
 
-## Contact Info
+## Contact
   [pm-912's GitHub](https://github.com/pm-912)
 
   <a href = "mailto:peterleemartin@gmail.com" > Email</a>
-
-
+  
